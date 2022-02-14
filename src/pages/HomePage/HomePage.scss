@@ -1,0 +1,58 @@
+@import "../../styles/variables";
+.home {
+  --background: url("../../assets/home/background-home-desktop.jpg");
+
+  &_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    div {
+      max-width: 450px;
+    }
+  }
+
+  &_main {
+    width: calc(1440px - 165px * 2);
+    margin: auto;
+    height: 84.9vh;
+    h5 {
+      color: $Blue;
+    }
+    h1 {
+      color: $White;
+    }
+    button {
+      background-color: $White;
+      color: $Dark;
+      width: 274px;
+      height: 274px;
+      border-radius: 50%;
+      position: relative;
+      &:hover {
+        &::before {
+          content: "";
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          position: absolute;
+          width: 274px;
+          height: 274px;
+          border-radius: 50%;
+          background-color: $White;
+          opacity: 0.1;
+          animation: pulse 1s ease-in-out infinite alternate;
+        }
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.6);
+  }
+}

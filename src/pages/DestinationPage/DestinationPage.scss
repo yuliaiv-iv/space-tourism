@@ -1,0 +1,81 @@
+@import "../../styles/variables";
+.destination {
+  --background: url("../../assets/destination/background-destination-desktop.jpg");
+
+  &_main {
+    width: calc(100% - 165px * 2);
+    margin: auto;
+    h2 {
+      color: $White;
+    }
+    h6 {
+      color: $Blue;
+    }
+    h4 {
+      color: $White;
+      margin-top: 12px;
+    }
+    p {
+      padding: 15px 0 54px;
+      border-bottom: 1px solid #383b4b;
+    }
+  }
+  &_container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(232px, 508px) minmax(200px, 445px)
+    );
+    grid-template-rows: repeat(auto-fit, 131px minmax(200px, 445px));
+    gap: 0 157px;
+    // grid-template-areas:
+    //   "name nav"
+    //   "img info";
+    nav {
+      // grid-area: nav;
+      align-self: end;
+      margin-bottom: 13px;
+      a {
+        color: $Blue;
+        margin-right: 35px;
+        &.active {
+          border-bottom: 3px #fff solid;
+          padding-bottom: 13px;
+          color: $White;
+        }
+      }
+    }
+    h5 {
+      // grid-area: name;
+      color: $White;
+      span {
+        font-weight: bold;
+        opacity: 0.25;
+        margin-right: 25px;
+      }
+    }
+    .info {
+      // grid-area: info;
+      align-self: end;
+    }
+    img {
+      // grid-area: img;
+      margin-left: auto;
+      width: 100%;
+      max-width: 445px;
+      max-height: 445px;
+    }
+
+    .figures {
+      display: flex;
+      margin-top: 28px;
+      div {
+        margin-right: 80px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
