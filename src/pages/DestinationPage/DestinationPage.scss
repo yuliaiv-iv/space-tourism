@@ -1,9 +1,11 @@
 @import "../../styles/variables";
+
 .destination {
   --background: url("../../assets/destination/background-destination-desktop.jpg");
 
   &_main {
-    width: calc(100% - 165px * 2);
+    max-width: 1110px;
+    width: calc(100% - 48px * 2);
     margin: auto;
     h2 {
       color: $White;
@@ -16,64 +18,52 @@
       margin-top: 12px;
     }
     p {
-      padding: 15px 0 54px;
+      padding: 15px 0 53px;
       border-bottom: 1px solid #383b4b;
     }
   }
   &_container {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(
-      auto-fit,
-      minmax(232px, 508px) minmax(200px, 445px)
-    );
-    grid-template-rows: repeat(auto-fit, 131px minmax(200px, 445px));
-    gap: 0 157px;
-    // grid-template-areas:
-    //   "name nav"
-    //   "img info";
-    nav {
-      // grid-area: nav;
-      align-self: end;
-      margin-bottom: 13px;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0 40px;
+    grid-template-areas:
+      "images slider"
+      "images content";
+    .images {
+      grid-area: images;
+      width: 100%;
+      display: flex;
+      img {
+        width: 100%;
+        max-width: 445px;
+        max-height: 445px;
+        margin-left: auto;
+      }
+    }
+    .slider {
+      grid-area: slider;
+      align-self: flex-start;
       a {
         color: $Blue;
         margin-right: 35px;
         &.active {
           border-bottom: 3px #fff solid;
-          padding-bottom: 13px;
+          padding-bottom: 12px;
           color: $White;
         }
       }
     }
-    h5 {
-      // grid-area: name;
-      color: $White;
-      span {
-        font-weight: bold;
-        opacity: 0.25;
-        margin-right: 25px;
-      }
-    }
-    .info {
-      // grid-area: info;
-      align-self: end;
-    }
-    img {
-      // grid-area: img;
-      margin-left: auto;
-      width: 100%;
-      max-width: 445px;
-      max-height: 445px;
-    }
-
-    .figures {
-      display: flex;
-      margin-top: 28px;
-      div {
-        margin-right: 80px;
-        &:last-child {
-          margin-right: 0;
+    .content {
+      grid-area: content;
+      .figures {
+        display: flex;
+        margin-top: 28px;
+      
+        div {
+          margin-right: 80px;
+          &:last-child {
+            margin-right: 0;
+          }
         }
       }
     }

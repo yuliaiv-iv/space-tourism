@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+h5 {
+  color: $White;
+  margin-top: 75px;
+  span {
+    font-weight: bold;
+    opacity: 0.25;
+    margin-right: 25px;
+  }
+}

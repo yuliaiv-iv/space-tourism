@@ -12,7 +12,8 @@
   }
 
   &_main {
-    width: calc(1440px - 165px * 2);
+    max-width: 1110px;
+    width: calc(100% - 165px * 2);
     margin: auto;
     height: 84.9vh;
     h5 {

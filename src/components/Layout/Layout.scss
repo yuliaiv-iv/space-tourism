@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+.layout {
+  display: grid;
+  margin-top: 63px;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(440px, 508px) minmax(430px, 500px)
+  );
+  grid-template-rows: repeat(auto-fit, minmax(32px, auto) minmax(15px, auto));
+  gap: 0 40px;
+}
+

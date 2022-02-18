@@ -1,0 +1,32 @@
+.crew {
+  --background: url("../../assets/crew/background-crew-desktop.jpg");
+
+  &_main {
+    max-width: 1110px;
+    width: calc(100% - 48px * 2);
+    margin: auto;
+    overflow: hidden;
+  }
+  &_container {
+    // align-items: flex-end;
+    justify-content: space-between;
+    gap: 0 40px;
+    grid-template-areas:
+      "content images"
+      "slider images";
+    .images {
+      grid-area: images;
+      // width: 100%;
+      // margin-top: -60px;
+      // img {
+      //   max-height: 660px;
+      // }
+    }
+    .slider {
+      grid-area: slider;
+    }
+    .content {
+      grid-area: content;
+    }
+  }
+}
