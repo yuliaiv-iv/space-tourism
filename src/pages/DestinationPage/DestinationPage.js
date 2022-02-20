@@ -32,35 +32,39 @@ function DestinationPage() {
     <Wrapper className="destination">
       <Header />
       <main className="destination_main">
-        <Title page="01" title="pick your destination" />
-        <Layout
-          className="destination_container"
-          src={data.destinations[0].images.png}
-          nav={data.destinations.map((item) => (
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid
-            <a className="active" href="#">
-              {item.name}
-            </a>
-          ))}
-          content={
-            <>
-              <h2>moon</h2>
-              <p>{data.destinations[0].description}</p>
-              <div className="figures">
-                <div>
-                  <h6>avg. distance</h6>
-                  <h4 className="subheading">
-                    {data.destinations[0].distance}
-                  </h4>
+        <section>
+          <Title page="01" title="pick your destination" />
+          <Layout
+            className="destination_container"
+            src={data.destinations[0].images.png}
+            nav={data.destinations.map((item) => (
+              // eslint-disable-next-line jsx-a11y/anchor-is-valid
+              <a className="active" href="#">
+                {item.name}
+              </a>
+            ))}
+            content={
+              <>
+                <h2>moon</h2>
+                <p>{data.destinations[0].description}</p>
+                <div className="figures">
+                  <div>
+                    <h6>avg. distance</h6>
+                    <h4 className="subheading">
+                      {data.destinations[0].distance}
+                    </h4>
+                  </div>
+                  <div>
+                    <h6>est. travel time</h6>
+                    <h4 className="subheading">
+                      {data.destinations[0].travel}
+                    </h4>
+                  </div>
                 </div>
-                <div>
-                  <h6>est. travel time</h6>
-                  <h4 className="subheading">{data.destinations[0].travel}</h4>
-                </div>
-              </div>
-            </>
-          }
-        ></Layout>
+              </>
+            }
+          ></Layout>
+        </section>
       </main>
     </Wrapper>
   );

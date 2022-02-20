@@ -6,16 +6,19 @@
     display: flex;
     justify-content: space-between;
     align-items: end;
+    width: 100%;
+    padding-bottom: 25vh;
     div {
       max-width: 450px;
     }
   }
 
   &_main {
-    max-width: 1110px;
-    width: calc(100% - 165px * 2);
+    max-width: 1440px;
+    max-width: calc(1440px - 330px);
     margin: auto;
-    height: 84.9vh;
+    height: calc(100vh - 136px);
+    display: flex;
     h5 {
       color: $Blue;
     }
