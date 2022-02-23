@@ -7,6 +7,12 @@ import Layout from "../../components/Layout/Layout";
 import data from "../../data.json";
 
 function CrewPage() {
+
+  let [index, setIndex] = React.useState(0);
+
+
+  const [currentSlide, setCurrentSlide] = React.useState(data.crew[index]);
+  console.log(currentSlide)
   return (
     <Wrapper className="crew">
       <Header />
@@ -24,13 +30,22 @@ function CrewPage() {
             }
             nav={
               <ul>
-                <li className="active"></li>
-                <li className="active"></li>
-                <li className="active"></li>
-                <li className="active"></li>
+                {data.crew.map((item, ind) => (
+                  <li
+                    className={item.name === currentSlide.name ? "active" : ""}
+                    onClick={() => setCurrentSlide(data.crew[ind])}
+                  >
+                  </li>
+                ))}
               </ul>
             }
-            src={data.crew[0].images.png}
+            images={data.crew.map((image) => (
+              <img
+                className={image.name === currentSlide.name ? "current_image" : ""}
+                src={image.images.png}
+                alt={image.name}
+              />
+            ))}
           ></Layout>
         </section>
       </main>
