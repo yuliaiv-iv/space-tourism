@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import "./DestinationPage.scss";
 import data from "../../data.json";
 import Layout from "../../components/Layout/Layout";
-import { useInitialSlider } from "../../hooks/SliderHook";
+import { useInitialSlider } from "../../hooks/useSlider";
 
 function DestinationPage() {
   const refMain = useRef();
@@ -13,6 +13,8 @@ function DestinationPage() {
   return (
     <Layout
       className="destination"
+      title="pick your destination"
+      page="01"
       ref={refMain}
       images={data.destinations.map((image, ind) => (
         <img

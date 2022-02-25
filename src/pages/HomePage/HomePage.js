@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Wrapper from "../../components/Wrapper/Wrapper";
+import { Link } from "react-router-dom";
 import "./HomePage.scss";
 
 function HomePage() {
@@ -8,8 +9,8 @@ function HomePage() {
     <Wrapper className="home">
       <Header />
       <main className="home_main">
-        <div className="home_info">
-          <div>
+        <section>
+          <div className="home_container">
             <h5>so, you want to travel to</h5>
             <h1>space</h1>
             <p>
@@ -19,8 +20,8 @@ function HomePage() {
               this world experience!
             </p>
           </div>
-          <button>explore</button>
-        </div>
+          <Link to="destination"><button>explore</button></Link>
+        </section>
       </main>
     </Wrapper>
   );

@@ -4,13 +4,16 @@
 
   &_main {
     width: 100%;
-    max-width: calc(1440px - 330px);
+    max-width: 1440px;
     margin: auto;
     section {
+      max-width: 1110px;
       display: flex;
       flex-direction: column;
       height: calc(100vh - 136px);
       justify-content: space-evenly;
+      padding: 0 50px;
+      margin: auto;
     }
     h3 {
       color: $White;
@@ -27,18 +30,32 @@
   }
   &_container {
     justify-content: space-between;
-    --gridColumns: repeat(auto-fit, minmax(550px, 615px) minmax(auto, 450px));
-    --gridRows: repeat(auto-fit, minmax(auto, 515px) minmax(auto, 15px));
+    --gridColumns: repeat(auto-fit, minmax(540px, auto) minmax(auto, 450px));
+    --gridRows: repeat(auto-fit, minmax(auto, 465px) minmax(auto, 50px));
     gap: 0 40px;
     grid-template-areas:
-      "content images"
-      "slider images";
+      "content track"
+      "slider track";
+    .track {
+      grid-area: track;
+      height: 100%;
+    }
     .images {
-      grid-area: images;
       width: 100%;
-      align-self: self-end;
+      height: 100%;
+      display: flex;
+      position: relative;
+      transition: transform 800ms ease-in-out;
+      .current_image {
+        display: block;
+      }
       img {
         width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: none;
       }
     }
     .slider {
@@ -62,6 +79,64 @@
     .content {
       grid-area: content;
       align-self: center;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .crew {
+    &_main {
+      section {
+        height: calc(100vh - 96px);
+        padding: 0 40px;
+        justify-content: normal;
+      }
+      h5 {
+        margin: 40px 0 60px;
+      }
+      h3 {
+        margin-bottom: 15px;
+      }
+      h4 {
+        color: $White;
+        opacity: 0.5;
+        margin-bottom: 8px;
+      }
+    }
+    &_container {
+      --gridColumns: 1fr;
+      align-items: flex-start;
+      --gridRows: repeat(
+        auto-fit,
+        minmax(auto, 182px) minmax(auto, 10px) minmax(auto, 532px)
+      );
+      gap: 0;
+      grid-template-areas:
+        "content"
+        "slider"
+        "track";
+        height: 100%;
+        align-content: space-between;
+      .images {
+        max-width: 422px;
+        margin: auto;
+      }
+      .slider {
+        ul {
+          justify-content: center;
+          li {
+            width: 10px;
+            height: 10px;
+          }
+        }
+      }
+      .content {
+        text-align: center;
+        p {
+          max-width: 537px;
+          margin: auto;
+        }
+      }
     }
   }
 }

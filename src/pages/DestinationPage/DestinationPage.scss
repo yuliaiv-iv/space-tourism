@@ -5,13 +5,16 @@
 
   &_main {
     width: 100%;
-    max-width: calc(1440px - 330px);
+    max-width: 1440px;
     margin: auto;
     section {
+      max-width: 1110px;
       display: flex;
       flex-direction: column;
       height: calc(100vh - 136px);
-      justify-content: space-evenly;
+      // justify-content: space-evenly;
+      padding: 0 50px;
+      margin: auto;
     }
     h2 {
       color: $White;
@@ -31,8 +34,8 @@
   }
   &_container {
     align-items: flex-end;
-    --gridColumns: repeat(auto-fit, minmax(430px, 445px) minmax(400px, 444px));
-    --gridRows: repeat(auto-fit, minmax(32px, 50px) minmax(445px, 480px));
+    --gridColumns: repeat(auto-fit, minmax(400px, 445px) minmax(430px, max-content));
+    --gridRows: repeat(auto-fit, minmax(32px, 35px) minmax(445px, 480px));
     gap: 0 40px;
     grid-template-areas:
       "track slider"
@@ -40,13 +43,13 @@
     .track {
       grid-area: track;
       height: 100%;
+      overflow: hidden;
     }
     .images {
       width: 100%;
       height: 100%;
       display: flex;
       position: relative;
-      // overflow: hidden;
       transition: transform 800ms ease-in-out;
       .current_image {
         display: block;
@@ -58,7 +61,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        padding-right: 50px;
+        transition: transform 800ms ease-in-out;
         display: none;
       }
     }
@@ -67,9 +70,13 @@
       align-self: flex-start;
       ul {
         display: flex;
+        margin-top: 30px;
         li {
           color: $Blue;
           margin-right: 35px;
+          &:last-child {
+            margin-right: 0;
+          }
           &.active {
             border-bottom: 3px #fff solid;
             padding-bottom: 12px;
@@ -83,7 +90,6 @@
       .figures {
         display: flex;
         margin-top: 28px;
-
         div {
           margin-right: 80px;
           &:last-child {
@@ -94,22 +100,58 @@
     }
   }
 }
-.hide {
-  display: none;
-  opacity: 0;
-}
 
-.show {
-  opacity: 1;
-  display: block;
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+@media screen and (max-width: 960px) {
+  .destination  {
+    &_main {
+      section {
+        height: calc(100vh - 96px);
+        padding: 0 40px;
+        justify-content: normal;
+      }
+      h5 {
+        margin: 40px 0 60px;
+      }
+    }
+    &_container {
+      --gridColumns: 1fr;
+      align-items: flex-start;
+      --gridRows: repeat(auto-fit, minmax(100px, 300px) minmax(20px, 34px) minmax(auto, 323px));
+      gap: 0;
+      grid-template-areas:
+      "track"
+      "slider"
+      "content";
+      height: 742px;
+      align-content: space-between;
+      overflow: hidden;
+      .images {
+        max-width: 300px;
+        margin: auto;
+        img {
+          max-width: 300px;
+        }
+      }
+      .slider {
+        ul {
+          margin-top: 0;
+          justify-content: center;
+        }
+      }
+      .content {
+        text-align: center;
+        p {
+          padding: 15px 0 41px;
+          max-width: 600px;
+          margin: auto;
+        }
+        h2 {
+          margin: 0;
+        }
+        .figures {
+          justify-content: center;
+        }
+      }
+    } 
   }
 }

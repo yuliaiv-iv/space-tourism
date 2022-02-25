@@ -1,29 +1,22 @@
 @import "../../styles/variables";
 .header {
-  width: calc(100% - 55px);
-  padding: 40px 0 0 55px;
-  height: 96px;
+  padding: 0 0 0 50px;
+  height: 15vh;
   display: flex;
   align-items: center;
   position: relative;
-  // margin-bottom: 18%;
-
-  img {
-    margin-right: 65px;
-  }
-
   hr {
     margin: 0;
     width: 32vw;
     color: $White;
     opacity: 0.25;
     position: absolute;
-    left: 170px;
+    left: 12vw;
     right: 0;
     z-index: 1;
   }
   &_nav {
-    height: 100%;
+    height: 96px;
     background-color: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(81.5485px);
     display: flex;
@@ -41,9 +34,30 @@
         &:last-child {
           margin-right: 0;
         }
-        &.active {
-          border-bottom: 3px #fff solid;
+        &:hover {
           padding-bottom: 35px;
+          border-bottom: 3px rgba(255, 255, 255, .5) solid;
+        }
+        &.active {
+          border-bottom: 3px $White solid;
+          padding-bottom: 35px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 1022px) {
+  .header  {
+    height: 96px;
+    hr {
+      display: none;
+    }
+    &_nav {
+      nav {
+        span {
+          display: none;
         }
       }
     }

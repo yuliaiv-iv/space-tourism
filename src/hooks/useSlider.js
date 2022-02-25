@@ -13,12 +13,18 @@ export const useInitialSlider = (refImage, refNav) => {
     setNav(Array.from(refNav.current.children));
   }, []);
 
+  console.log(slideSize)
+
   React.useEffect(() => {
     const cuurent = refNav.current;
     const mouseClickHandler = (e) => {
-      const targetIndex = nav.findIndex((dot) => dot === e.target);
-      setIndex(targetIndex);
-      setCurrentSlide(slides[targetIndex]);
+      if (e.currentTarget === e.target) {
+        return
+      } else {
+        const targetIndex = nav.findIndex((dot) => dot === e.target);
+        setIndex(targetIndex);
+        setCurrentSlide(slides[targetIndex]);
+      }
     };
     cuurent.addEventListener("click", mouseClickHandler);
     return () => {

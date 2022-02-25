@@ -1,45 +1,51 @@
-import React from "react";
-import Header from "../../components/Header/Header";
+import React, { useRef } from "react";
 import Layout from "../../components/Layout/Layout";
-import Title from "../../components/Title/Title";
-import Wrapper from "../../components/Wrapper/Wrapper";
 import "./Technology.scss";
 import data from "../../data.json";
+import { useInitialSlider } from "../../hooks/useSlider";
+import { useWindowSize } from "../../hooks/useWindowSize";
 
 function Technology() {
+  const refMain = useRef();
+  const refNav = useRef();
+
+  const { index, handleImage } = useInitialSlider(refMain, refNav);
+  const windowSize = useWindowSize();
+  const resize = windowSize <= 960;
   return (
-    <Wrapper className="technology">
-      <Header />
-      <main className="technology_main">
-        <section>
-          <Title page="03" title="space launch 101" />
-          <Layout
-            className="technology_container"
-            src={data.technology[0].images.portrait}
-            nav={
-              <ul>
-                <li className="active">
-                  <h4>1</h4>
-                </li>
-                <li className="active">
-                  <h4>2</h4>
-                </li>
-                <li className="active">
-                  <h4>3</h4>
-                </li>
-              </ul>
-            }
-            content={
-              <>
-                <h6>the terminology...</h6>
-                <h3>{data.technology[0].name}</h3>
-                <p>{data.technology[0].description}</p>
-              </>
-            }
-          ></Layout>
-        </section>
-      </main>
-    </Wrapper>
+    <Layout
+      className="technology"
+      title="space launch 101"
+      page="03"
+      ref={refMain}
+      images={data.technology.map((image, ind) => (
+        <img
+          className={index === ind ? "current_image" : ""}
+          src={resize ? image.images.landscape : image.images.portrait}
+          alt={image.name}
+        />
+      ))}
+      nav={
+        <ul ref={refNav}>
+          {data.technology.map((item, ind) => (
+            <li key={item.name} className={index === ind ? "active" : ""} onClick={handleImage}>
+              {ind + 1}
+            </li>
+          ))}
+        </ul>
+      }
+      content={
+        <>
+          <h6>the terminology...</h6>
+          {data.technology.map((item, ind) => (
+            <div className={index === ind ? "show" : "hide"}>
+              <h3>{item.name}</h3>
+              <p>{item.description}</p>
+            </div>
+          ))}
+        </>
+      }
+    ></Layout>
   );
 }
 

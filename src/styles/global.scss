@@ -111,5 +111,58 @@ ul {
     letter-spacing: 2.7px;
     text-transform: uppercase;
     text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  h5 {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 3.375px;
+  }
+  h2 {
+    font-size: 80px;
+    line-height: 92px;
+  }
+  p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  a {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 2.3625px;
+  }
+  h4 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  h3 {
+    font-size: 40px;
+    line-height: 46px;
+  }
+  h1 {
+    line-height: 150px;
   }
 }
