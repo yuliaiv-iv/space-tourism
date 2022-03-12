@@ -13,8 +13,6 @@ export const useInitialSlider = (refImage, refNav) => {
     setNav(Array.from(refNav.current.children));
   }, []);
 
-  console.log(slideSize)
-
   React.useEffect(() => {
     const cuurent = refNav.current;
     const mouseClickHandler = (e) => {
@@ -27,19 +25,23 @@ export const useInitialSlider = (refImage, refNav) => {
       }
     };
     cuurent.addEventListener("click", mouseClickHandler);
+    cuurent.addEventListener("keydown", mouseClickHandler);
     return () => {
       cuurent.removeEventListener("click", mouseClickHandler);
+      cuurent.removeEventListener("keydown", mouseClickHandler);
     };
   }, [refNav, nav, slides]);
 
   const setSlidePosition = (slide, index) => {
-    slide.style.left = slideSize * index + "px";
+    slide.style.left = slideSize * index * 2 + "px";
   };
   slides.forEach(setSlidePosition);
+
 
   function handleImage() {
     refImage.current.style.transform =
       "translateX(-" + currentSlide.style.left + ")";
+      console.log(refImage.current.style.transform)
   }
 
   return {

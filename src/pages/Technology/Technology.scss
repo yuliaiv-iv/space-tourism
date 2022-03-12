@@ -10,8 +10,8 @@
       max-width: 1275px;
       display: flex;
       flex-direction: column;
-      height: calc(100vh - 136px);
-      justify-content: space-evenly;
+      height: 85vh;
+      justify-content: space-between;
       margin-left: auto;
       padding: 0 0 0 50px;
     }
@@ -19,16 +19,20 @@
       color: $White;
       margin: 10px 0 17px;
     }
+    p {
+      max-width: 444px;
+    }
   }
   &_container {
     gap: 0 30px;
     --gridColumns: repeat(
       auto-fit,
-      minmax(60px, auto) minmax(380px, 470px) minmax(380px, 515px)
+      minmax(60px, auto) minmax(400px, 470px) minmax(300px, 480px)
     );
-    --gridRows: minmax(auto, 515px);
+    --gridRows: minmax(auto, 480px);
     grid-template-areas: "slider content track";
     align-items: center;
+    margin-bottom: 10vh;
     .track {
       grid-area: track;
       height: 100%;
@@ -93,7 +97,7 @@
   }
 }
 
-@media screen and (max-width: 1130px) {
+@media screen and (max-width: 1104px) {
   .technology {
     .slider {
       ul {
@@ -106,58 +110,58 @@
   }
 }
 
-@media screen and (max-width: 960px) {
-  .technology {
-    &_main {
-      section {
-        height: calc(100vh - 96px);
-        justify-content: normal;
-        padding: 0;
-      }
-      h5 {
-        margin: 40px 0 60px;
-        padding: 0 40px;
-      }
-    }
-    &_container {
-      --gridColumns: 1fr;
-      align-items: flex-start;
-      --gridRows: repeat(auto-fit, minmax(auto, 310px) minmax(auto, 60px) minmax(auto, 237px));
-      gap: 0;
-      grid-template-areas:
-      "track"
-      "slider"
-      "content";
-      height: 707px;
-      align-content: space-between;
-      .images {
-        img {
-          max-height: 310px;
-        }
-      }
-      .slider {
-        padding: 0 40px;
-        display: flex;
-        justify-content: center;
-        ul {
-          display: flex;
-          li {
-            margin: 0;
-            margin-right: 16px;
-            &:last-child {
-              margin-right: 0;
-            }
-          }
-        }
-      }
-      .content {
-        padding: 0 40px;
-        text-align: center;
-        p {
-          max-width: 458px;
-          margin: auto;
-        }
-      }
-    }
-  }
-}
+// @media screen and (max-width: 960px) {
+//   .technology {
+//     &_main {
+//       section {
+//         height: calc(100vh - 96px);
+//         justify-content: normal;
+//         padding: 0;
+//       }
+//       h5 {
+//         margin: 40px 0 60px;
+//         padding: 0 40px;
+//       }
+//     }
+//     &_container {
+//       --gridColumns: 1fr;
+//       align-items: flex-start;
+//       --gridRows: repeat(auto-fit, minmax(auto, 310px) minmax(auto, 60px) minmax(auto, 237px));
+//       gap: 0;
+//       grid-template-areas:
+//       "track"
+//       "slider"
+//       "content";
+//       height: 707px;
+//       align-content: space-between;
+//       .images {
+//         img {
+//           max-height: 310px;
+//         }
+//       }
+//       .slider {
+//         padding: 0 40px;
+//         display: flex;
+//         justify-content: center;
+//         ul {
+//           display: flex;
+//           li {
+//             margin: 0;
+//             margin-right: 16px;
+//             &:last-child {
+//               margin-right: 0;
+//             }
+//           }
+//         }
+//       }
+//       .content {
+//         padding: 0 40px;
+//         text-align: center;
+//         p {
+//           max-width: 458px;
+//           margin: auto;
+//         }
+//       }
+//     }
+//   }
+// }

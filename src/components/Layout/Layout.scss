@@ -1,8 +1,11 @@
 @import "../../styles/variables";
 .layout {
-  display: grid;
-  justify-content: space-between;
-  grid-template-columns: var(--gridColumns);
-  grid-template-rows: var(--gridRows);
+  position: relative;
+  transition: transform 800ms ease-in-out;
+  // display: flex;
+  // justify-content: space-between;
+  // justify-content: space-between;
+  // grid-template-columns: var(--gridColumns);
+  // grid-template-rows: var(--gridRows);
 }
 
