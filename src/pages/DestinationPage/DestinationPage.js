@@ -39,7 +39,7 @@ function DestinationPage() {
           key={ind}
         >
           <img src={item.images.png} alt={item.name} />
-          <div>
+          <div className="content">
             <h2>{item.name}</h2>
             <p>{item.description}</p>
             <div className="figures">

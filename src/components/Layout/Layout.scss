@@ -1,11 +1,21 @@
 @import "../../styles/variables";
 .layout {
   position: relative;
+  height: 445px;
   transition: transform 800ms ease-in-out;
-  // display: flex;
-  // justify-content: space-between;
-  // justify-content: space-between;
-  // grid-template-columns: var(--gridColumns);
-  // grid-template-rows: var(--gridRows);
+}
+
+.layout_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 910px) {
+  .layout {
+    height: 88vh;
+  }
+  .layout_header {
+    flex-direction: column;
+  }
 }
 
