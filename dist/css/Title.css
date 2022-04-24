@@ -1,0 +1,16 @@
+h5 {
+  color: #FFFFFF;
+}
+
+h5 span {
+  font-weight: bold;
+  opacity: 0.25;
+  margin-right: 25px;
+}
+
+@media screen and (max-width: 910px) {
+  h5 {
+    margin: 40px 0;
+  }
+}
+/*# sourceMappingURL=Title.css.map */

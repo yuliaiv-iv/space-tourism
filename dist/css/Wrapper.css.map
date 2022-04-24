@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,UAAU,EAAE,iBAAiB;EAC7B,iBAAiB,EAAE,SAAS;EAC5B,eAAe,EAAE,SAAS;EAC1B,MAAM,EAAE,KAAK;EACb,QAAQ,EAAE,MAAM;CACjB",
     "sources": [
         "../../src/components/Wrapper/Wrapper.scss"
     ],

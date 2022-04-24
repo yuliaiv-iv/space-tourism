@@ -3,7 +3,7 @@ import "./Wrapper.scss";
 
 function Wrapper({ className, children }) {
   return (
-    <section className={`wrapper ${className}`}>{children}</section>
+    <section className={`wrapper wrapper-${className}`}>{children}</section>
   );
 }
 

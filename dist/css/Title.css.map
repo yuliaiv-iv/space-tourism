@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,EAAE,CAAC;EACD,KAAK,ECAC,OAAO;CDMd;;AAPD,AAEE,EAFA,CAEA,IAAI,CAAC;EACH,WAAW,EAAE,IAAI;EACjB,OAAO,EAAE,IAAI;EACb,YAAY,EAAE,IAAI;CACnB;;AAGH,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EACjC,AAAA,EAAE,CAAC;IACD,MAAM,EAAE,MAAM;GACf",
+    "sources": [
+        "../../src/components/Title/Title.scss",
+        "../../src/styles/_variables.scss"
+    ],
+    "names": [],
+    "file": "Title.css"
+}
