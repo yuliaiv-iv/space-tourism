@@ -29,6 +29,11 @@ button.active {
 .grid-container--destination > img {
   grid-area: image;
   max-width: 50%;
+  display: none;
+}
+
+.grid-container--destination > img.active {
+  display: block;
 }
 
 .grid-container--destination > .tab-list {
@@ -37,6 +42,11 @@ button.active {
 
 .grid-container--destination > .destination-info {
   grid-area: content;
+  display: none;
+}
+
+.grid-container--destination > .destination-info.active {
+  display: block;
 }
 
 .destination-meta {
