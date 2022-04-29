@@ -9,6 +9,10 @@ header {
   --gap: clamp(1.5rem, 5vw, 3.5rem);
 }
 
+.header-nav > * {
+  --underline-gap: 2rem;
+}
+
 .logo {
   margin: 1.5rem clamp(1.5rem, 5vw, 3.5rem);
 }

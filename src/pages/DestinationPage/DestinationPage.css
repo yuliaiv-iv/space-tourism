@@ -1,126 +1,3 @@
-/* @import "../../styles/variables";
-
-.destination {
-  --background: url("../../assets/destination/background-destination-desktop.jpg");
-  &_main {
-    width: 100%;
-    max-width: 1440px;
-    margin: auto;
-    section {
-      max-width: 1110px;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      padding: 0 50px;
-      margin: auto;
-    }
-    h2 {
-      color: $White;
-    }
-    h6 {
-      color: $Blue;
-    }
-    h4 {
-      color: $White;
-      margin-top: 12px;
-    }
-    p {
-      padding: 15px 0 53px;
-      border-bottom: 1px solid #383b4b;
-    }
-    .slider {
-      ul {
-        display: flex;
-        li {
-          color: $Blue;
-          margin-right: 35px;
-          &:hover {
-            border-bottom: 3px rgba(255, 255, 255, 0.5) solid;
-          }
-          &:last-child {
-            margin-right: 0;
-          }
-          &.active {
-            border-bottom: 3px #fff solid;
-            padding-bottom: 12px;
-            color: $White;
-          }
-        }
-      }
-    }
-    .container {
-      width: 100%;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      display: none;
-      img {
-        width: 100%;
-        max-width: 100%;
-        object-fit: cover;
-        align-self: center;
-      }
-      .figures {
-        display: flex;
-        margin-top: 28px;
-        div {
-          margin-right: 80px;
-          &:last-child {
-            margin-right: 0;
-          }
-        }
-      }
-    }
-    .current {
-      display: grid;
-      grid-auto-flow: column;
-      justify-content: space-between;
-      align-items: center;
-      grid-gap: 60px;
-      grid-template-columns: repeat(
-        auto-fit,
-        minmax(232px, 445px) minmax(250px, 500px)
-      );
-      transition: transform 0.2s ease-out;
-    }
-  }
-}
-
-@media screen and (max-width: 910px) {
-  .destination {
-    section {
-      justify-content: flex-start;
-      p {
-        padding: 15px 0 15px;
-      }
-    }
-    .slider {
-      ul {
-        justify-content: center;
-        // margin-top: 60px;
-      }
-    }
-    .current {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      grid-gap: 0;
-      img {
-        max-width: 300px;
-        margin-bottom: 30px;
-      }
-    }
-    .content {
-      text-align: center;
-      .figures {
-        justify-content: center;
-      }
-    }
-  }
-} */
-
 .wrapper-destination {
   --background: url("../../assets/destination/background-destination-mobile.jpg");
 }
@@ -129,18 +6,20 @@
   color: hsl( var(--clr-white) / .25);
 }
 
+h2 {
+  padding: 3rem 0;
+}
+
 button.active {
   color: hsl( var(--clr-white));
-  /* --underline-gap: 1rem; */
-  /* padding: var(--underline-gap, 1rem) 0 */
 }
 
 .grid-container--destination {
   grid-template-areas: 
-      'title'
-      'image'
-      'tabs'
-      'content';
+    'title'
+    'image'
+    'tabs'
+    'content';
 }
 
 .title {
@@ -149,7 +28,7 @@ button.active {
 
 .grid-container--destination > img {
   grid-area: image;
-  max-width: 60%;
+  max-width: 50%;
 }
 
 .grid-container--destination > .tab-list {
@@ -167,14 +46,54 @@ button.active {
   margin-top: 2.5rem;
 }
 
+article > p {
+  max-width: 570px;
+}
+
 @media (min-width: 560px) {
   .wrapper-destination {
     --background: url("../../assets/destination/background-destination-tablet.jpg");
+  }
+  .title {
+    margin: 2rem 0;
+    justify-self: start;
+  }
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .grid-container--destination > img {
+    max-width: 43%;
   }
 }
 
 @media (min-width: 931px) {
   .wrapper-destination {
     --background: url("../../assets/destination/background-destination-desktop.jpg");
+  }
+  .grid-container--destination {
+    grid-template-areas: 
+    'title title'
+    '. tabs'
+    'image content';
+    grid-template-rows: repeat(3, min-content);
+    justify-content: space-between;
+    --grid-first-column: 32rem;
+    --grid-second-column: 28rem;
+    --bottom-padding: 1rem;
+    --view-port: 13vh;
+  }
+  .grid-container--destination > img {
+    max-width: 100%;
+    align-self: flex-end;
+    place-self: flex-end;
+  }
+  .destination-info {
+    place-self: flex-start;
+    align-self: end;
+  }
+  .destination-meta {
+    flex-direction: row;
+    justify-content: flex-start;
   }
 }

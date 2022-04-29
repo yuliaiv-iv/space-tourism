@@ -6,6 +6,10 @@ h1 {
   --background: url("../../assets/home/background-home-mobile.jpg");
 }
 
+.wrapper-home p {
+  max-width: 450px;
+}
+
 .btn {
   background-color: hsl( var(--clr-white) );
   color: hsl( var(--clr-dark) );
@@ -13,10 +17,12 @@ h1 {
   position: relative;
   display: inline-grid;
   place-items: center;
+  place-self: center;
   padding: 0 1em;
   border-radius: 50%;
   aspect-ratio: 1;
 }
+
 .btn::before {
   content: "";
   position: absolute;
@@ -54,7 +60,12 @@ h1 {
   .wrapper-home {
     --background: url("../../assets/home/background-home-desktop.jpg");
   }
+  .grid-container--home {
+    --bottom-padding: 4rem;
+    --view-port: 20vh;
+  }
   .btn {
+    place-self: flex-end;
     font-size: 2rem;
     padding: 0 2em;
   }

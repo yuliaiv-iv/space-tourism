@@ -25,7 +25,6 @@
 @media (min-width: 560px) {
   :root {
     --fs-800: 5rem;
-    --fs-700: 2.5rem;
     --fs-600: 1.5rem;
     --fs-500: 1.25rem;
     --fs-400: 1rem;
@@ -34,11 +33,17 @@
 
 @media (min-width: 931px) {
   :root {
-    --fs-800: 6.25rem;
-    --fs-700: 3.5rem;
+    --fs-800: clamp(3rem, 6vw + 1rem, 6.25rem);
+    --fs-700: 2.5rem;
     --fs-600: 2rem;
     --fs-500: 1.75rem;
     --fs-400: 1.125rem;
+  }
+}
+
+@media (min-width: 1090px) {
+  :root {
+    --fs-700: 3.5rem;
   }
 }
 
@@ -62,7 +67,7 @@ h5,
 p,
 figure,
 picture {
-  margin: 0;
+  margin: 0 auto;
 }
 
 h1,
@@ -82,6 +87,17 @@ body {
   color: hsl( var(--clr-white) );
   background-color: hsl( var(--clr-dark) );
   line-height: 1.5;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+/* set up the max width of content */
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
 }
 
 /* make images easier to work with */
@@ -148,44 +164,37 @@ button {
   gap: var(--gap, 1rem);
 }
 
-/* .container {
-  padding: 0 2em;
-  margin: 0 auto;
-  max-width: 80rem;
-} */
-
 .grid-container {
   display: grid;
-  text-align: center;
   place-items: center;
-  padding: 0 1.5rem;
-  padding-bottom: 3rem;
+  text-align: center;
+  width: calc(100% - 1rem * 2);
+  margin: 0 auto;
+  row-gap: var(--row-gap, 1rem);
+  padding-bottom: 2rem;
 }
 
-.grid-container * {
-  max-width: 45ch;
+@media (min-width: 560px) {
+  .grid-container {
+    width: calc(100% - 2rem * 2);
+  }
 }
 
 @media (min-width: 931px) {
   .grid-container {
+    width: calc(100% - 7rem * 2);
     text-align: left;
+    column-gap: var(--column-gap, 2rem);
+    --row-gap: 0;
+    grid-template-columns: minmax(0, var(--grid-first-column, auto)) minmax(0, var(--grid-second-column, auto));
     place-items: flex-start;
-    column-gap: var(--container-gap, 2rem);
-    grid-template-columns: minmax(1rem, 1fr) minmax(0, 35rem) minmax(0, 35rem)  minmax(1rem, 1fr);
+    align-self: flex-end;
+    padding-bottom: max(var(--bottom-padding), var(--view-port));
   }
-  
-  .grid-container > *:first-child {
-    grid-column: 2;
+  .grid-container--technology {
+    width: 100%;
+    padding-left: 7rem;
   }
-
-  .grid-container > *:last-child {
-    grid-column: 3;
-    place-self: end;
-  }
-  .grid-container--home {
-    padding-bottom: max(6rem, 20vh);
-    align-items: end;
-}
 }
 
 
@@ -251,7 +260,7 @@ button {
 /* COMPONENTS */
 
 .underline > * {
-  padding: var(--underline-gap, 2rem) 0;
+  padding: var(--underline-gap, .5rem) 0;
   border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
 }
 
@@ -263,3 +272,7 @@ button {
 .underline .active {
   border-color: hsl( var(--clr-white) / 1);
 }
+
+/* [role="tab"]:focus {
+  color: limegreen;
+} */

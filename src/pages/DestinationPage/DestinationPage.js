@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, createRef } from "react";
 import "./DestinationPage.css";
 import data from "../../data.json";
 import Layout from "../../components/Layout/Layout";
@@ -6,51 +6,65 @@ import { useInitialSlider } from "../../hooks/useSlider";
 import Header from "../../components/Header/Header";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import NumberedTitle from "../../components/NumberedTitle/NumberedTitle";
+import { Fragment } from "react/cjs/react.production.min";
+import TabList from "../../components/TabList/TabList";
 
 function DestinationPage() {
-  // const refMain = useRef();
-  // const refNav = useRef();
-  // const { index, handleImage } = useInitialSlider(
-  //   refMain,
-  //   refNav
-  // );
+  // const refMain = createRef();
+  const refNav = useRef();
+  const { index, handleImage, nav, handleTab } = useInitialSlider(
+    // refMain,
+    refNav
+  );
+
+  // console.log(refMain.current)
+  const { destinations } = data;
+  // console.log(refNav.current.children);
 
   return (
     <Wrapper className="destination">
       <Header />
-      <main className="grid-container grid-container--destination">
-        <NumberedTitle title="title" spanClass="destanation-title" number="01">
-          pick your destination
-        </NumberedTitle>
-        <img src={data.destinations[0].images.png} />
-        <div class="underline flex tab-list">
-          <button class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2 active">
-            Moon
-          </button>
-          <button class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">
-            Mars
-          </button>
-          <button class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">
-            Europa
-          </button>
-          <button class="uppercase ff-sans-cond text-accent bg-dark letter-spacing-2">
-            Titan
-          </button>
+      <main>
+        <div className="grid-container grid-container--destination">
+          <NumberedTitle
+            title="title"
+            spanClass="destanation-title"
+            number="01"
+          >
+            pick your destination
+          </NumberedTitle>
+          <TabList
+            array={destinations}
+            name={"name"}
+          ></TabList>
+          {destinations.map(
+            ({ name, description, distance, travel, images }, index) => (
+              // <div role="tabpanel" id={name}>
+                <Fragment key={name}>
+                  <img src={images.png} alt={name} />
+                  <article className="destination-info">
+                    <h2 className="fs-800 uppercase ff-serif">{name}</h2>
+                    <p className="text-accent">{description}</p>
+                    <div className="flex destination-meta">
+                      <div>
+                        <h3 className="text-accent fs-200 uppercase">
+                          Avg. distance
+                        </h3>
+                        <p className="fs-500 ff-serif uppercase">{distance}</p>
+                      </div>
+                      <div>
+                        <h3 className="text-accent fs-200 uppercase">
+                          Est. travel time
+                        </h3>
+                        <p className="fs-500 ff-serif uppercase">{travel}</p>
+                      </div>
+                    </div>
+                  </article>
+                </Fragment>
+              // </div>
+            )
+          )}
         </div>
-        <article className="destination-info">
-          <h2 className="fs-800 uppercase ff-serif">{data.destinations[0].name}</h2>
-          <p className="text-accent">{data.destinations[0].description}</p>
-          <div className="flex destination-meta">
-            <div>
-              <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-              <p className="fs-500 ff-serif uppercase">384,400 km</p>
-            </div>
-            <div>
-              <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-              <p className="fs-500 ff-serif uppercase">3 days</p>
-            </div>
-          </div>
-        </article>
       </main>
     </Wrapper>
     // <Layout
