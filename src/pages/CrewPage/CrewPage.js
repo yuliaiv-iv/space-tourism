@@ -19,20 +19,28 @@ function CrewPage() {
       <main>
         <div className="grid-container grid-container--crew">
           <NumberedTitle
-            title="title"
-            spanClass="destanation-title"
             number="02"
+            styleClass="crew-title letter-spacing-1 fs-300"
+            navigationTitle={false}
           >
             meet your crew
           </NumberedTitle>
           {crew.map(({ role, name, bio, images }, index) => (
             <Fragment key={name}>
-              <article className="crew-info">
+              <article className={`crew-info ${
+                    activeTab === index ? "active" : ""
+                  }`}>
                 <h3 className="fs-600 uppercase ff-serif">{role}</h3>
                 <h2 className="text-white fs-700 ff-serif uppercase">{name}</h2>
                 <p className="text-accent">{bio}</p>
               </article>
-              <img src={images.png} alt={name} />
+              <div className={`crew-image ${activeTab === index ? "active" : ""}`}>
+              <img
+                src={images.png}
+                alt={name}
+                // className={activeTab === index ? "active" : ""}
+              />
+              </div>
             </Fragment>
           ))}
           <TabList

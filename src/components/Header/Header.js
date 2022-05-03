@@ -32,9 +32,7 @@ function Header() {
       ) : null}
       <nav>
         <ul
-          className={`flex underline header-nav ${
-            menuOpen ? "show" : "close"
-          }`}
+          className={`flex underline header-nav ${menuOpen ? "show" : "close"}`}
         >
           {navigationLinks.map((link, index) => (
             <NavLink
@@ -42,7 +40,13 @@ function Header() {
               className="text-white"
               to={link === "home" ? "/" : `/${link}`}
             >
-              <NumberedTitle number={`0${index}`}>{link}</NumberedTitle>
+              <NumberedTitle
+                navigationTitle={true}
+                number={`0${index}`}
+                styleClass="letter-spacing-2"
+              >
+                {link}
+              </NumberedTitle>
             </NavLink>
           ))}
         </ul>

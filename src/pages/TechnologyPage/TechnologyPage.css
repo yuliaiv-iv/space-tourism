@@ -10,21 +10,39 @@
     'content';
 }
 
-.title {
+h2 {
+  padding: 2rem 0;
+}
+
+.technology-title {
   grid-area: title;
+  padding: 1rem 0;
+  justify-self: center;
+}
+
+.technology-title > span {
+  color: hsl( var(--clr-white) / .25);
 }
 
 .grid-container--technology > img {
   grid-area: image;
   width: 100%;
+  display: none;
 }
 
+.grid-container--technology > img.active {
+  display: block;
+}
 .grid-container--technology > .tab-list {
   grid-area: tabs;
 }
 
 .grid-container--technology > .technology-info {
   grid-area: content;
+  display: none;
+}
+.grid-container--technology > .technology-info.active {
+  display: block;
 }
 
 .grid-container--technology .tab-list > * {
@@ -34,6 +52,8 @@
   border-bottom: 0;
   border: 1px solid hsl( var(--clr-white) / .25);
   border-radius: 50%;
+  font-size: var(--fs-600);
+  font-family: var(--ff-serif);
 }
 
 .grid-container--technology .tab-list .active {
@@ -41,13 +61,17 @@
   color: hsl( var(--clr-dark) );
 }
 
-@media (min-width: 560px) {
+@media (min-width: 600px) {
   .wrapper-technology {
     --background: url("../../assets/technology/background-technology-tablet.jpg");
   }
   .grid-container--technology .tab-list > * {
     width: 3.75rem;
     height: 3.75rem;
+  }
+  .technology-title {
+    padding: 2rem 0;
+    justify-self: flex-start;
   }
 }
 

@@ -24,11 +24,9 @@ function HomePage() {
               this world experience!
             </p>
           </div>
-          <div className="btn uppercase ff-serif bg-white">
-            <Link to="/destination" className="text-dark">
-              Explore
-            </Link>
-          </div>
+          <Link className="btn uppercase ff-serif bg-white" to="/destination">
+            Explore
+          </Link>
         </div>
       </main>
     </Wrapper>

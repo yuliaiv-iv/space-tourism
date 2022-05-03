@@ -46,7 +46,7 @@ h1 {
   }
 }
 
-@media (min-width: 560px) {
+@media (min-width: 600px) {
   .wrapper-home {
     --background: url("../../assets/home/background-home-tablet.jpg");
   }

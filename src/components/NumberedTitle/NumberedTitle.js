@@ -2,12 +2,21 @@ import React from "react";
 import "./NumberedTitle.css";
 import { useWindowSize } from "../../hooks/useWindowSize";
 
-function NumberedTitle({ number, children, title, spanClass }) {
+function NumberedTitle({
+  number,
+  children,
+  styleClass,
+  navigationTitle,
+}) {
   const windowSize = useWindowSize();
   const resolution = windowSize <= 930 && windowSize >= 600;
   return (
-    <p className={`uppercase letter-spacing-2 ff-sans-cond ${title}`}>
-      {resolution ? null : <span className={spanClass} aria-hidden="true">{number}</span>}
+    <p className={`uppercase ff-sans-cond ${styleClass}`}>
+      {resolution && navigationTitle ? null : (
+        <span aria-hidden="true">
+          {number}
+        </span>
+      )}
       {children}
     </p>
   );

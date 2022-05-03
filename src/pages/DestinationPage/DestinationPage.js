@@ -19,9 +19,9 @@ function DestinationPage() {
       <main>
         <div className="grid-container grid-container--destination">
           <NumberedTitle
-            title="title"
-            spanClass="destanation-title"
+            styleClass="destination-title letter-spacing-1 fs-300"
             number="01"
+            navigationTitle={false}
           >
             pick your destination
           </NumberedTitle>
@@ -49,13 +49,13 @@ function DestinationPage() {
                   <p className="text-accent">{description}</p>
                   <div className="flex destination-meta">
                     <div>
-                      <h3 className="text-accent fs-200 uppercase">
+                      <h3 className="text-accent fs-200 uppercase ff-sans-cond letter-spacing-3">
                         Avg. distance
                       </h3>
                       <p className="fs-500 ff-serif uppercase">{distance}</p>
                     </div>
                     <div>
-                      <h3 className="text-accent fs-200 uppercase">
+                      <h3 className="text-accent fs-200 uppercase ff-sans-cond letter-spacing-3">
                         Est. travel time
                       </h3>
                       <p className="fs-500 ff-serif uppercase">{travel}</p>

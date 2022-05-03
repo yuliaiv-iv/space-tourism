@@ -21,8 +21,8 @@ function TechnologyPage() {
       <main>
         <div className="grid-container grid-container--technology">
           <NumberedTitle
-            title="title"
-            spanClass="destanation-title"
+            styleClass="technology-title letter-spacing-1 fs-300"
+            navigationTitle={false}
             number="03"
           >
             space launch 101
@@ -36,13 +36,16 @@ function TechnologyPage() {
           ></TabList>
           {technology.map(({ name, description, images }, index) => (
             <Fragment key={name}>
-              <article className="technology-info" onTouchEnd={resolution ? () => console.log("moved") : null}>
+              <article className={`technology-info ${
+                    activeTab === index ? "active" : ""
+                  }`}>
                 <h2 className="text-white fs-700 ff-serif uppercase">{name}</h2>
                 <p className="text-accent">{description}</p>
               </article>
               <img
                 src={!resolution ? images.portrait : images.landscape}
                 alt={name}
+                className={activeTab === index ? "active" : ""}
               />
             </Fragment>
           ))}
