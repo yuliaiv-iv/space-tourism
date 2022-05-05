@@ -6,12 +6,12 @@ import Wrapper from "../../components/Wrapper/Wrapper";
 import data from "../../data.json";
 import TabList from "../../components/TabList/TabList";
 import { Fragment } from "react/cjs/react.production.min";
-import { useInitialSlider } from "../../hooks/useSlider";
+import { useInitialTabs } from "../../hooks/useTabs";
 
 function CrewPage() {
   const { crew } = data;
   const refNav = useRef();
-  const { activeTab, selectedTab } = useInitialSlider(refNav);
+  const { activeTab, selectedTab } = useInitialTabs(refNav);
 
   return (
     <Wrapper className="crew">
@@ -38,7 +38,6 @@ function CrewPage() {
               <img
                 src={images.png}
                 alt={name}
-                // className={activeTab === index ? "active" : ""}
               />
               </div>
             </Fragment>

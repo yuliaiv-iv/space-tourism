@@ -1,6 +1,6 @@
 import { useState, useCallback, useEffect } from "react";
 
-export const useInitialSlider = (navigationRef) => {
+export const useInitialTabs = (navigationRef) => {
   const [selectedTab, setSelectedTab] = useState(0);
   const [navs, setNavs] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
@@ -57,7 +57,6 @@ export const useInitialSlider = (navigationRef) => {
   );
 
   useEffect(() => {
-    // const tabItems = navigationRef.current;
     if (navs) {
       navs.addEventListener("keydown", handleArrowsKeys);
       return () => navs.removeEventListener("keydown", handleArrowsKeys);
@@ -66,13 +65,11 @@ export const useInitialSlider = (navigationRef) => {
   }, [handleArrowsKeys, navs]);
 
   useEffect(() => {
-    // const tabItems = navigationRef.current;
     if (navs) {
       navs.addEventListener("click", handleMouseClick);
       return () => navs.addEventListener("click", handleMouseClick);
     }
     return;
-    // return () => navs.addEventListener("click", handleMouseClick);
   }, [handleMouseClick, navs]);
 
   //   const [index, setIndex] = useState(0);

@@ -11,7 +11,7 @@ function HomePage() {
       <main>
         <div className="grid-container grid-container--home">
           <div>
-            <h2 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
+            <h2 className="text-accent fs-300 ff-sans-cond uppercase letter-spacing-1">
               So, you want to travel to
             </h2>
             <h1 className="fs-900 ff-serif uppercase letter-spacing-1 text-white">

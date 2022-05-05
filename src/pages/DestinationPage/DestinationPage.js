@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import "./DestinationPage.css";
 import data from "../../data.json";
-import { useInitialSlider } from "../../hooks/useSlider";
+import { useInitialTabs } from "../../hooks/useTabs";
 import Header from "../../components/Header/Header";
 import Wrapper from "../../components/Wrapper/Wrapper";
 import NumberedTitle from "../../components/NumberedTitle/NumberedTitle";
@@ -11,7 +11,7 @@ import TabList from "../../components/TabList/TabList";
 function DestinationPage() {
   const { destinations } = data;
   const refNav = useRef();
-  const { activeTab, selectedTab } = useInitialSlider(refNav);
+  const { activeTab, selectedTab } = useInitialTabs(refNav);
 
   return (
     <Wrapper className="destination">

@@ -7,14 +7,14 @@ import data from "../../data.json";
 import { Fragment } from "react/cjs/react.production.min";
 import TabList from "../../components/TabList/TabList";
 import { useWindowSize } from "../../hooks/useWindowSize";
-import { useInitialSlider } from "../../hooks/useSlider";
+import { useInitialTabs } from "../../hooks/useTabs";
 
 function TechnologyPage() {
   const { technology } = data;
   const windowSize = useWindowSize();
   const resolution = windowSize <= 930;
   const refNav = useRef();
-  const { activeTab, selectedTab } = useInitialSlider(refNav);
+  const { activeTab, selectedTab } = useInitialTabs(refNav);
   return (
     <Wrapper className="technology">
       <Header />

@@ -9,6 +9,9 @@ h1 {
 .wrapper-home p {
   max-width: 450px;
 }
+.grid-container--home {
+  align-items: center;
+}
 
 .btn {
   background-color: hsl( var(--clr-white) );
@@ -60,10 +63,10 @@ h1 {
   .wrapper-home {
     --background: url("../../assets/home/background-home-desktop.jpg");
   }
-  .grid-container--home {
+  /* .grid-container--home {
     --bottom-padding: 4rem;
     --view-port: 20vh;
-  }
+  } */
   .btn {
     place-self: flex-end;
     font-size: 2rem;

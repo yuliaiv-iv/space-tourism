@@ -93,8 +93,8 @@ article > p {
     justify-content: space-between;
     --grid-first-column: 32rem;
     --grid-second-column: 28rem;
-    --bottom-padding: 1rem;
-    --view-port: 13vh;
+    /* --bottom-padding: 1rem;
+    --view-port: 13vh; */
   }
   .grid-container--destination > img {
     max-width: 100%;

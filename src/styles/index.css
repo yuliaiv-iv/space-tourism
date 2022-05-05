@@ -185,7 +185,7 @@ button {
   text-align: center;
   width: calc(100% - 1rem * 2);
   margin: 0 auto;
-  align-items: flex-start;
+  align-items: center;
   row-gap: var(--row-gap, 1rem);
   padding-bottom: 2rem;
 }
@@ -201,13 +201,16 @@ button {
     width: calc(100% - 3rem * 2);
     text-align: left;
     column-gap: var(--column-gap, 2rem);
-    /* --row-gap: 0; */
     row-gap: var(--row-gap, 0rem);
     grid-template-columns: 
       minmax(0, var(--grid-first-column, auto)) minmax(0, var(--grid-second-column, auto));
     place-items: flex-start;
-    align-self: flex-end;
-    padding-bottom: max(var(--bottom-padding), var(--view-port));
+    align-self: center;
+    padding-bottom: 0;
+  }
+  .grid-container--technology {
+    width: 100%;
+    padding-left: 3rem;
   }
 }
 

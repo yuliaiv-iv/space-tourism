@@ -18,6 +18,7 @@ h2 {
   grid-area: title;
   padding: 1rem 0;
   justify-self: center;
+  align-self: flex-start;
 }
 
 .technology-title > span {
@@ -81,16 +82,14 @@ h2 {
   }
   .grid-container--technology {
     grid-template-areas: 
-      'title title title'
+      'title title .'
       'tabs content image';
       grid-template-rows: min-content 527px;
-      align-self: flex-end;
-      --bottom-padding: 1rem;
-      --view-port: 13vh;
   }
   .grid-container--technology > img {
-    width: 100%;
+    width: auto;
     align-self: center;
+    justify-self: flex-end;
   }
   .grid-container--technology > .technology-info {
     align-self: center;
